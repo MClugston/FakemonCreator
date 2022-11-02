@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="MediaTrackerProjectPartTwo" />
+        <module name="fakemoncreator" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="MediaTrackerProjectPartTwo" target="11" />
+      <module name="fakemoncreator" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

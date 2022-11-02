@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.Line?>
 <?import java.lang.*?>
 <Pane fx:id="background" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.mediatrackerprojectparttwo.Controller"
+      fx:controller="com.example.fakemoncreator.Controller"
       style="-fx-background-color:#ffffff;">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>

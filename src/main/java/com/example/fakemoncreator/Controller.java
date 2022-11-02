@@ -1,4 +1,4 @@
-package com.example.mediatrackerprojectparttwo;
+package com.example.fakemoncreator;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -49,6 +49,7 @@ public class Controller {
     public void initialize(){
         displayOutput();
         resetLabels();
+        output.setText(AbilitySet.getAbilitySet().toString());
     }
 
     @FXML

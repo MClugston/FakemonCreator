@@ -1,4 +1,4 @@
-package com.example.mediatrackerprojectparttwo;
+package com.example.fakemoncreator;
 
 public class Movie extends Media{
     public Movie(String title, String genre, int progress, int length) {
