@@ -47,6 +47,16 @@ public class MoveSet implements Iterable<Move>{
         return null;
     }
 
+    //Check if another item has the same name; only used internally
+    public boolean alreadyInSet(String name){
+        for(Move m : thisSet){
+            if(m.getName().equalsIgnoreCase(name)){
+                return true;
+            }
+        }
+        return false;
+    }
+
     @Override
     public Iterator<Move> iterator() {
         return thisSet.iterator();

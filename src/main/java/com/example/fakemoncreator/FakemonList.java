@@ -31,7 +31,7 @@ public class FakemonList implements Iterable<Fakemon>{
         return false;
     }
 
-    //Remove item, but by name rather than object
+    //Remove item by name
     public boolean removeFakemon(String name){
         if(alreadyInList(name)){
             for(Fakemon f : monList){
@@ -44,7 +44,7 @@ public class FakemonList implements Iterable<Fakemon>{
         return false;
     }
 
-    //Easy way to access individual items of the list through the title
+    //Access individual items of the list via name
     public Fakemon getFakemon(String name){
         for(Fakemon f : monList){
             if(f.getName().equalsIgnoreCase(name)){
@@ -55,7 +55,7 @@ public class FakemonList implements Iterable<Fakemon>{
         return null;
     }
 
-    //Check if another item has the same title; not available to the user
+    //Check if another item has the same name; only used internally
     public boolean alreadyInList(String name){
         for(Fakemon f : monList){
             if(f.getName().equalsIgnoreCase(name)){

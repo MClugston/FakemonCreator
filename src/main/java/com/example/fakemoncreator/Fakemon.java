@@ -9,7 +9,7 @@ public class Fakemon {
     private String primaryType;
     private String secondaryType;
     private Ability ability;
-    private List<Move> moveList;
+    private final List<Move> moveList;
     private int hp;
     private int attack;
     private int defense;
@@ -37,11 +37,12 @@ public class Fakemon {
         this.description = description;
     }
 
+    //Get and set methods
     public String getName() {
         return name;
     }
 
-    public String setName(String name) {
+    public String setName(String name) { //Fails if name is taken
         if (FakemonList.getFakemonListInstance().alreadyInList(name)) {
             return "A Fakemon with this name already exists.";
         }
@@ -68,7 +69,7 @@ public class Fakemon {
     }
 
     public String setSecondaryType(String secondaryType) {
-        String oldSecondaryType = this.getSecondaryType();
+        String oldSecondaryType = this.getSecondaryType(); // Prevent potential null pointer
         this.secondaryType = secondaryType;
         return "Secondary type changed to " + secondaryType + " (Was " + oldSecondaryType + ")";
     }
@@ -157,6 +158,7 @@ public class Fakemon {
         return "Description changed to " + description + " (Was " + oldDescription + ")";
     }
 
+    // Basic adds and removes for moveList
     public String addMove(Move move) {
         moveList.add(move);
         return "Move " + move.getName() + " successfully added to " + this.getName();

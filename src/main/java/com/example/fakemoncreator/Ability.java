@@ -9,11 +9,15 @@ public class Ability implements Comparable<Ability> {
         this.effect = effect;
     }
 
+    //Basic get and set methods
     public String getName() {
         return name;
     }
 
-    public String setName(String name) {
+    public String setName(String name) { //Only works if name isn't taken
+        if(AbilitySet.getAbilitySet().alreadyInSet(name)){
+            return "An ability with this name already exists.";
+        }
         String oldName = this.name;
         this.name = name;
         return "Name was changed to " + name + " (Was " + oldName + ")";

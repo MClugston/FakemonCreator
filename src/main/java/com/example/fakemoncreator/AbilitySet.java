@@ -36,7 +36,7 @@ public class AbilitySet implements Iterable<Ability>{
         return false;
     }
 
-    //Access individual items of the set through the title
+    //Access  items via name
     public Ability getAbility(String name){
         for(Ability a : thisSet){
             if(a.getName().equalsIgnoreCase(name)){
@@ -45,6 +45,16 @@ public class AbilitySet implements Iterable<Ability>{
         }
         System.out.println("An item with that name was not found in the list.");
         return null;
+    }
+
+    //Check if another item has the same name; only used internally
+    public boolean alreadyInSet(String name){
+        for(Ability a : thisSet){
+            if(a.getName().equalsIgnoreCase(name)){
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override

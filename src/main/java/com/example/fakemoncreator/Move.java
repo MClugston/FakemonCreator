@@ -24,6 +24,9 @@ public class Move implements Comparable<Move>{
     }
 
     public String setName(String name) {
+        if(MoveSet.getMoveSet().alreadyInSet(name)){
+            return "A move with this name already exists.";
+        }
         String oldName = this.name;
         this.name = name;
         return "Name was changed to " + name + " (Was " + oldName + ")";

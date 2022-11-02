@@ -55,6 +55,7 @@ public class Main extends Application implements Serializable {
         }
 
         try{
+            //Initialize abilitySet from official abilities file
             File abilityFile = new File("abilities.txt");
             Scanner scanner = new Scanner(abilityFile);
             AbilitySet abilitySet = AbilitySet.getAbilitySet();
@@ -69,6 +70,7 @@ public class Main extends Application implements Serializable {
             e.printStackTrace();
         }
         try {
+            //Initialize moveSet from official moves file
             File moveFile = new File("moves.txt");
             Scanner scanner = new Scanner(moveFile);
             MoveSet moveSet = MoveSet.getMoveSet();
