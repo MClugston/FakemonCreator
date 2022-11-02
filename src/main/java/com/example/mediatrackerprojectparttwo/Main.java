@@ -54,6 +54,6 @@ public class Main extends Application implements Serializable {
             System.out.println("ERROR in Scanner Creation on Startup");
         }
         launch(args); //Launch JavaFX
-
+        System.out.println("Yeah");
     }
 }
