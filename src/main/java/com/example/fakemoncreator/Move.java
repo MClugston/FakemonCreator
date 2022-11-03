@@ -97,8 +97,6 @@ public class Move implements Comparable<Move>{
         String output = name + ": " + "a " + type + " type " + category + " move. ";
         if(category.equalsIgnoreCase("status")){
             output += "Non-damaging, ";
-        } else if(power==1 && accuracy==30){
-            output += "One-Hit KO, ";
         } else if (power==1) {
             output += "Variable power, ";
         } else{
@@ -115,6 +113,6 @@ public class Move implements Comparable<Move>{
 
     @Override
     public int compareTo(Move o) {
-        return this.name.compareTo(o.getName());
+        return this.name.compareToIgnoreCase(o.getName());
     }
 }

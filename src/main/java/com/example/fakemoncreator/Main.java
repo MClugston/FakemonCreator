@@ -88,17 +88,6 @@ public class Main extends Application implements Serializable {
             e.printStackTrace();
         }
 
-        FakemonList.getFakemonListInstance().addFakemon(new Fakemon("A", "FIRE", "ICE", AbilitySet.getAbilitySet().getAbility("Stalwart"), 10,20,30,40,50,60,"He's awesome"));
-        FakemonList.getFakemonListInstance().addFakemon(new Fakemon("B", "FIRE", "ICE", AbilitySet.getAbilitySet().getAbility("Stalwart"), 10,20,30,40,50,60,"He's awesome"));
-        FakemonList.getFakemonListInstance().addFakemon(new Fakemon("Z", "FIRE", "ICE", AbilitySet.getAbilitySet().getAbility("Stalwart"), 10,20,30,40,50,60,"He's awesome"));
-        FakemonList.getFakemonListInstance().addFakemon(new Fakemon("C", "FIRE", "ICE", AbilitySet.getAbilitySet().getAbility("Stalwart"), 10,20,30,40,50,60,"He's awesome"));
-        FakemonList.getFakemonListInstance().addFakemon(new Fakemon("F", "FIRE", "ICE", AbilitySet.getAbilitySet().getAbility("Stalwart"), 10,20,30,40,50,60,"He's awesome"));
-
-        HeapSort<Fakemon> sort = new HeapSort<>();
-        sort.sort(FakemonList.getMonList());
-
-        System.out.println(FakemonList.getFakemonListInstance().toString());
-
         launch(args); //Launch JavaFX
     }
 }

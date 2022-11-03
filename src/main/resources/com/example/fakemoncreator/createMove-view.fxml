@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.fakemoncreator.createMoveController"
+      style="-fx-background-color:#ffffff;">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <TextField fx:id="nameText" layoutX="40" layoutY="20" text="Input Name" prefWidth="360"/>
+
+    <ComboBox fx:id="typeText" layoutX="40" layoutY="60" prefWidth="80"/>
+    <ComboBox fx:id="categoryText" layoutX="130" layoutY="60" prefWidth="80"/>
+
+    <TextField fx:id="powerText" layoutX="220" layoutY="60" prefWidth="53" text="Power"/>
+    <TextField fx:id="accuracyText" layoutX="283" layoutY="60" prefWidth="53" text="Accuracy"/>
+    <TextField fx:id="ppText" layoutX="346" layoutY="60" prefWidth="53" text="PP"/>
+
+    <TextArea fx:id="descriptionText" layoutX="40" layoutY="100" prefWidth="360" prefHeight="240" text="Enter Description"/>
+
+    <Label layoutX="85" layoutY="350" text="For non-damaging moves, input 0 for the power."/>
+    <Label layoutX="75" layoutY="370" text="For moves with variable power, input 1 for the power."/>
+    <Label layoutX="83" layoutY="390" text="For moves that can't miss, input 0 for the accuracy."/>
+
+    <Label fx:id="output" layoutX="100" layoutY="440" text="Once all fields are filled, press Create Move"/>
+    <Button onAction="#createMove" layoutX="165" layoutY="480" text="Create Move"/>
+
+</Pane>

@@ -7,6 +7,8 @@ Original code obtained from https://www.geeksforgeeks.org/java-program-for-heap-
 Originally made for arr[], edits made for List<E>
  */
 
+//O(nlogn) efficiency
+
 public class HeapSort<E extends Comparable<E>> {
     public void sort(List<E> list) {
         int n = list.size();
