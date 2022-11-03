@@ -69,7 +69,16 @@ public class Controller {
 
     @FXML
     protected void createAbility(){
-
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("createAbility-view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 440, 520);
+            Stage stage = new Stage();
+            stage.setTitle("Create an Ability");
+            stage.setScene(scene);
+            stage.show();
+        } catch(IOException e){
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -91,7 +100,16 @@ public class Controller {
 
     @FXML
     protected void createMove(){
-
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("createMove-view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 440, 520);
+            Stage stage = new Stage();
+            stage.setTitle("Create a Move");
+            stage.setScene(scene);
+            stage.show();
+        } catch(IOException e){
+            e.printStackTrace();
+        }
     }
 
     @FXML

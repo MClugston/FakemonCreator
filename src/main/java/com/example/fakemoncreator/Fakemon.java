@@ -218,6 +218,6 @@ public class Fakemon implements Comparable<Fakemon>{
 
     @Override
     public int compareTo(Fakemon o) {
-        return this.getName().compareTo(o.getName());
+        return this.getName().compareToIgnoreCase(o.getName());
     }
 }

@@ -40,6 +40,6 @@ public class Ability implements Comparable<Ability> {
 
     @Override
     public int compareTo(Ability o) {
-        return this.name.compareTo(o.getName());
+        return this.name.compareToIgnoreCase(o.getName());
     }
 }

@@ -70,8 +70,9 @@ public class FakemonList implements Iterable<Fakemon>{
         return false;
     }
 
-    public static void sort(){
-
+    public void sort(){
+        HeapSort<Fakemon> sort = new HeapSort<>();
+        sort.sort(monList);
     }
 
     @Override
@@ -81,7 +82,7 @@ public class FakemonList implements Iterable<Fakemon>{
 
     @Override
     public String toString() {
-        FakemonList.sort();
+        sort();
         String output = "";
         for(Fakemon f : monList){
             output += f.toString() + "\n";

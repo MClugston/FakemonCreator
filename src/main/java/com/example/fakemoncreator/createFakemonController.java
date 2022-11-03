@@ -46,8 +46,9 @@ public class createFakemonController {
     @FXML
     private Label output2;
 
-    private List<Move> fakemonMoveList = new ArrayList<>();
+    private final List<Move> fakemonMoveList = new ArrayList<>();
 
+    // Setup all default values
     public void initialize(){
         abilityComboBox.getItems().addAll(AbilitySet.getRawAbilitySet());
 
@@ -80,12 +81,12 @@ public class createFakemonController {
         primaryTypeBox.getSelectionModel().selectFirst();
         secondaryTypeBox.getSelectionModel().selectFirst();
         moveComboBox.getSelectionModel().selectFirst();
-
     }
 
+    //Add a move to the list that will be added to the finished Fakemon
     @FXML
     protected void addMove(){
-        if(!(fakemonMoveList.contains(moveComboBox.getValue()))) {
+        if(!(fakemonMoveList.contains(moveComboBox.getValue()))) { //If move isn't already in the list
             fakemonMoveList.add(moveComboBox.getValue());
         }
         moveOutput.setText("");
@@ -96,6 +97,7 @@ public class createFakemonController {
 
     @FXML
     protected void createFakemon(){
+        //Initialize all values
         String name;
         Ability ability;
         String primaryType;
@@ -109,6 +111,7 @@ public class createFakemonController {
         String description;
 
         try{
+            //Get all values from fields
             hp = Integer.parseInt(hpText.getText());
             atk = Integer.parseInt(atkText.getText());
             def = Integer.parseInt(defText.getText());
@@ -122,23 +125,24 @@ public class createFakemonController {
             secondaryType = secondaryTypeBox.getValue();
             description = descriptionText.getText();
 
-            if(primaryType.equalsIgnoreCase(secondaryType)){
+            if(primaryType.equalsIgnoreCase(secondaryType)){ //If primary and secondary types are the same, inform user
                 output1.setText("Primary and secondary");
                 output2.setText("types cannot be the same.");
-            } else if(FakemonList.getFakemonListInstance().alreadyInList(name)){
+            } else if(FakemonList.getFakemonListInstance().alreadyInList(name)){ //If name is in use, inform user
                 output1.setText("Name is already in use.");
                 output2.setText("Please select a different name.");
-            } else {
+            } else { //Otherwise, create Fakemon
                 FakemonList.getFakemonListInstance().addFakemon(new Fakemon(name, primaryType, secondaryType, ability, hp, atk, def, spAtk, spDef, spe, description));
-                if(fakemonMoveList.size()>0){
+                if(fakemonMoveList.size()>0){ // Add moves (if any)
                     FakemonList.getFakemonListInstance().getFakemon(name).addMoves(fakemonMoveList);
                 }
 
+                //Close the popup
                 Stage stage = (Stage) output1.getScene().getWindow();
                 stage.close();
             }
 
-        } catch(NumberFormatException e){
+        } catch(NumberFormatException e){ // If stat fields aren't numbers, tell user
             output1.setText("");
             output2.setText("Invalid stats. Please enter only numbers.");
         }
