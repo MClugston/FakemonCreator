@@ -31,29 +31,6 @@ public class Main extends Application implements Serializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        try { //Initialize mediaList from saveFile
-            Scanner scanner = new Scanner(new File("saveFile.txt"));
-            MediaList mediaList = MediaList.getMediaListInstance();
-            while(scanner.hasNext()) {
-                String type = scanner.nextLine();
-                if(type.equalsIgnoreCase("book")){
-                    mediaList.addMedia(new Book(scanner.nextLine(), scanner.nextLine(),
-                            Integer.parseInt(scanner.nextLine()), Integer.parseInt(scanner.nextLine())));
-                } else if (type.equalsIgnoreCase("movie")){
-                    mediaList.addMedia(new Movie(scanner.nextLine(), scanner.nextLine(),
-                            Integer.parseInt(scanner.nextLine()), Integer.parseInt(scanner.nextLine())));
-                } else if (type.equalsIgnoreCase("show")){
-                    mediaList.addMedia(new Show(scanner.nextLine(), scanner.nextLine(),
-                            Integer.parseInt(scanner.nextLine()), Integer.parseInt(scanner.nextLine())));
-                } else{
-                    mediaList.addMedia(new Media(scanner.nextLine(), scanner.nextLine(),
-                            Integer.parseInt(scanner.nextLine()), Integer.parseInt(scanner.nextLine())));
-                }
-            }
-        } catch(FileNotFoundException e){
-            System.out.println("ERROR in Scanner Creation on Startup");
-        }
-
         try{
             //Initialize abilitySet from official abilities file
             File abilityFile = new File("abilities.txt");
@@ -107,16 +84,20 @@ public class Main extends Application implements Serializable {
                 String description = nextLine;
                 moveSet.addMove(new OfficialMove(name, type, category, power, accuracy, pp, description));
             }
-            System.out.println(moveSet);
         } catch (Exception e){
             e.printStackTrace();
         }
 
-        FakemonList.getFakemonListInstance().addFakemon(new Fakemon("Wawa", "FIRE", "ICE", AbilitySet.getAbilitySet().getAbility("Stalwart"), 10,20,30,40,50,60,"He's awesome"));
-        FakemonList.getFakemonListInstance().getFakemon("Wawa").addMove(MoveSet.getMoveSet().getMove("Fire Punch"));
-        FakemonList.getFakemonListInstance().getFakemon("Wawa").addMove(MoveSet.getMoveSet().getMove("Thunder fang"));
-        FakemonList.getFakemonListInstance().getFakemon("Wawa").addMove(MoveSet.getMoveSet().getMove("rolLiNg KiCk"));
-        System.out.println(FakemonList.getFakemonListInstance().getFakemon("Wawa"));
+        FakemonList.getFakemonListInstance().addFakemon(new Fakemon("A", "FIRE", "ICE", AbilitySet.getAbilitySet().getAbility("Stalwart"), 10,20,30,40,50,60,"He's awesome"));
+        FakemonList.getFakemonListInstance().addFakemon(new Fakemon("B", "FIRE", "ICE", AbilitySet.getAbilitySet().getAbility("Stalwart"), 10,20,30,40,50,60,"He's awesome"));
+        FakemonList.getFakemonListInstance().addFakemon(new Fakemon("Z", "FIRE", "ICE", AbilitySet.getAbilitySet().getAbility("Stalwart"), 10,20,30,40,50,60,"He's awesome"));
+        FakemonList.getFakemonListInstance().addFakemon(new Fakemon("C", "FIRE", "ICE", AbilitySet.getAbilitySet().getAbility("Stalwart"), 10,20,30,40,50,60,"He's awesome"));
+        FakemonList.getFakemonListInstance().addFakemon(new Fakemon("F", "FIRE", "ICE", AbilitySet.getAbilitySet().getAbility("Stalwart"), 10,20,30,40,50,60,"He's awesome"));
+
+        HeapSort<Fakemon> sort = new HeapSort<>();
+        sort.sort(FakemonList.getMonList());
+
+        System.out.println(FakemonList.getFakemonListInstance().toString());
 
         launch(args); //Launch JavaFX
     }

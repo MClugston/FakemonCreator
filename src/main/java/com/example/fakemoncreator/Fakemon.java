@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class Fakemon {
+public class Fakemon implements Comparable<Fakemon>{
     private String name;
     private String primaryType;
     private String secondaryType;
@@ -197,20 +197,27 @@ public class Fakemon {
         }
         output += " type with the ability " + ability.getName() + ". ";
         output += hp + " HP; " + attack + " Atk; " + defense + " Def; "
-                + specialAttack + " spAtk; " + specialDefense + " SpDef; "
+                + specialAttack + " SpAtk; " + specialDefense + " SpDef; "
                 + speed + " Spd; Base stat total of " + statTotal + ". ";
-        output += "It can learn the moves ";
-        for (int i=0; i<moveList.size(); i++){
-            output += moveList.get(i).getName();
-            if (i==(moveList.size()-2)){
-                output += ", and ";
-            } else if (i==(moveList.size()-1)){
-                output += ". ";
-            } else{
-                output += ", ";
+        if(moveList.size()>0){
+            output += "It can learn the moves ";
+            for (int i=0; i<moveList.size(); i++) {
+                output += moveList.get(i).getName();
+                if (i == (moveList.size() - 2)) {
+                    output += ", and ";
+                } else if (i == (moveList.size() - 1)) {
+                    output += ". ";
+                } else {
+                    output += ", ";
+                }
             }
         }
         output += description;
         return output;
+    }
+
+    @Override
+    public int compareTo(Fakemon o) {
+        return this.getName().compareTo(o.getName());
     }
 }

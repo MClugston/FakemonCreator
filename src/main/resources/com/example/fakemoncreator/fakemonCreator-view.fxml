@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.collections.FXCollections?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
-<?import java.lang.*?>
+
 <Pane fx:id="background" xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.example.fakemoncreator.Controller"
       style="-fx-background-color:#ffffff;">
@@ -15,46 +14,38 @@
     </padding>
 
 
-    <Label fx:id="header" text="Welcome to your media tracker!" layoutX="40" layoutY="40"/>
+    <Label fx:id="header" text="Welcome to the Fakemon Creator!" layoutX="40" layoutY="40"/>
     <TextArea fx:id="output" layoutX="40" layoutY="200" prefWidth="1200" prefHeight="480" wrapText="true" editable="false"/>
 
-    <Button text="Add An Item" onAction="#onAddButtonClick" layoutX="40" layoutY="80"/>
-    <Button text="Remove An Item" onAction="#onRemoveButtonClick" layoutX="280" layoutY="80"/>
-    <Button text="Edit An Item" onAction="#onEditButtonClick" layoutX="520" layoutY="80"/>
-    <Button text="Help" onAction="#onHelpButtonClick" layoutX="760" layoutY="80"/>
-    <Button text="Delete List" onAction="#promptReset" layoutX="1000" layoutY="80"/>
+    <Button text="Create A Fakemon" onAction="#createFakemon" layoutX="40" layoutY="80"/>
+    <Button text="Delete A Fakemon" onAction="#deleteFakemon" layoutX="280" layoutY="80"/>
+    <Button text="Edit A Fakemon" onAction="#editFakemon" layoutX="520" layoutY="80"/>
+    <Button text="View Fakemon List" onAction="#viewFakemonList" layoutX="760" layoutY="80"/>
 
-    <TextField fx:id="title" layoutX="40" layoutY="120" text="Input Title"/>
-    <ComboBox fx:id="mediaType" layoutX="280" layoutY="120" prefWidth="150">
-        <items>
-            <FXCollections fx:factory="observableArrayList">
-                <String fx:value="Book"/>
-                <String fx:value="Show"/>
-                <String fx:value="Movie"/>
-                <String fx:value="Other"/>
-            </FXCollections>
-        </items>
-    </ComboBox>
-    <TextField fx:id="genre"  layoutX="520" layoutY="120" text="Input Genre"/>
-    <TextField fx:id="progress" layoutX="760" layoutY="120" text="Input Progress"/>
-    <TextField fx:id="length" layoutX="1000" layoutY="120" text="Input Length"/>
+
+    <Button text="Create An Ability" onAction="#createAbility" layoutX="40" layoutY="120"/>
+    <Button text="Delete An Ability" onAction="#deleteAbility" layoutX="280" layoutY="120"/>
+    <Button text="Edit An Ability" onAction="#editAbility" layoutX="520" layoutY="120"/>
+    <Button text="View Ability List" onAction="#viewAbilityList" layoutX="760" layoutY="120"/>
+
+    <Button text="Create A Move" onAction="#createMove" layoutX="40" layoutY="160"/>
+    <Button text="Delete A Move" onAction="#deleteMove" layoutX="280" layoutY="160"/>
+    <Button text="Edit A Move" onAction="#editMove" layoutX="520" layoutY="160"/>
+    <Button text="View Move List" onAction="#viewMoveList" layoutX="760" layoutY="160"/>
+
+    <Button text="aa" onAction="#promptReset" layoutX="1000" layoutY="80"/>
+
+
+
+
+
+
+
 
     <Line layoutX="40" layoutY="152" endX="1200" fx:id="separator"/>
 
-    <TextField fx:id="titleSearch" layoutX="40" layoutY="160" text="Search By Title"/>
-    <ComboBox fx:id="mediaTypeSearch" layoutX="280" layoutY="160" prefWidth="150">
-        <items>
-            <FXCollections fx:factory="observableArrayList">
-                <String fx:value="All"/>
-                <String fx:value="Book"/>
-                <String fx:value="Show"/>
-                <String fx:value="Movie"/>
-                <String fx:value="Other"/>
-            </FXCollections>
-        </items>
-    </ComboBox>
-    <TextField fx:id="genreSearch" layoutX="520" layoutY="160" text="Search By Genre"/>
-    <Button layoutX="760" layoutY="160" text="Search" onAction="#displayBySearch"/>
+
+
 
     <VBox layoutX="1000" layoutY="160">
         <RadioButton fx:id="lightMode" text="Light Mode" selected="true" onAction="#lightModeButton">

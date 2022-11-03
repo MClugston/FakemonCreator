@@ -12,12 +12,17 @@ public class MoveSet implements Iterable<Move>{
         thisSet = new TreeSet<>();
     }
 
-    // Return the list
+    // Return the MoveSet
     public static MoveSet getMoveSet(){
         if(instance == null){
             instance = new MoveSet();
         }
         return instance;
+    }
+
+    //Return the internal TreeSet
+    public static TreeSet<Move> getRawMoveSet(){
+        return thisSet;
     }
 
     //Add move

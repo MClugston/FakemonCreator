@@ -1,4 +1,4 @@
-module com.example.mediatrackerprojectparttwo {
+module com.example.fakemoncreator {
     requires javafx.controls;
     requires javafx.fxml;
 

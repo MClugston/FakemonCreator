@@ -12,12 +12,17 @@ public class AbilitySet implements Iterable<Ability>{
         thisSet = new TreeSet<>();
     }
 
-    // Return the list
+    // Return the AbilitySet
     public static AbilitySet getAbilitySet(){
         if(instance == null){
             instance = new AbilitySet();
         }
         return instance;
+    }
+
+    //Return the internal TreeSet
+    public static TreeSet<Ability> getRawAbilitySet(){
+        return thisSet;
     }
 
     //Add ability

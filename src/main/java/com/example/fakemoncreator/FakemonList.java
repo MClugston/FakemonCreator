@@ -22,6 +22,11 @@ public class FakemonList implements Iterable<Fakemon>{
         return instance;
     }
 
+    //Return internal List
+    public static List<Fakemon> getMonList(){
+        return monList;
+    }
+
     //Add item only if the title is not used
     public boolean addFakemon(Fakemon fakemon){
         if(!alreadyInList(fakemon.getName())){
@@ -65,8 +70,22 @@ public class FakemonList implements Iterable<Fakemon>{
         return false;
     }
 
+    public static void sort(){
+
+    }
+
     @Override
     public Iterator<Fakemon> iterator() {
         return monList.iterator();
+    }
+
+    @Override
+    public String toString() {
+        FakemonList.sort();
+        String output = "";
+        for(Fakemon f : monList){
+            output += f.toString() + "\n";
+        }
+        return output;
     }
 }
