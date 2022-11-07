@@ -14,23 +14,8 @@ public class Ability implements Comparable<Ability> {
         return name;
     }
 
-    public String setName(String name) { //Only works if name isn't taken
-        if(AbilitySet.getAbilitySet().alreadyInSet(name)){
-            return "An ability with this name already exists.";
-        }
-        String oldName = this.name;
-        this.name = name;
-        return "Name was changed to " + name + " (Was " + oldName + ")";
-    }
-
     public String getEffect() {
         return effect;
-    }
-
-    public String setEffect(String effect) {
-        String oldEffect = this.effect;
-        this.effect = effect;
-        return "Effect was changed to " + effect + " (Was " + oldEffect + ")";
     }
 
     @Override

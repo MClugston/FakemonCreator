@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane fx:id="background" xmlns:fx="http://javafx.com/fxml"
+<Pane xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.example.fakemoncreator.createFakemonController"
       style="-fx-background-color:#ffffff;">
     <padding>
@@ -29,10 +29,10 @@
     <Label layoutX="260" layoutY="35" text="and click Add Move"/>
 
     <ComboBox fx:id="moveComboBox" layoutX="240" layoutY="60" prefWidth="150"/>
-    <Button onAction="#addMove" layoutX="280" layoutY="100" text="Add Move"/>
-    <TextArea fx:id="moveOutput" layoutX="240" layoutY="140" prefWidth="150" prefHeight="100" editable="false"/>
+    <Button onAction="#addMove" layoutX="278" layoutY="100" text="Add Move"/>
+    <TextArea fx:id="moveOutput" layoutX="240" layoutY="140" prefWidth="150" prefHeight="100" editable="false" wrapText="true"/>
 
-    <TextArea fx:id="descriptionText" layoutX="240" layoutY="305" prefHeight="100" prefWidth="150" text="Enter a description"/>
+    <TextArea fx:id="descriptionText" layoutX="240" layoutY="260" prefHeight="145" prefWidth="150" text="Enter a description" wrapText="true"/>
 
     <Label layoutX="155" layoutY="430" text="Once all field are filled," fx:id="output1"/>
     <Label layoutX="130" layoutY="450" text="click the Create Fakemon Button!" fx:id="output2"/>

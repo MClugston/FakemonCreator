@@ -131,7 +131,13 @@ public class createFakemonController {
             } else if(FakemonList.getFakemonListInstance().alreadyInList(name)){ //If name is in use, inform user
                 output1.setText("Name is already in use.");
                 output2.setText("Please select a different name.");
-            } else { //Otherwise, create Fakemon
+            } else if((name.trim().equals("")) || description.trim().equals("")){
+                output1.setText("Please input something");
+                output2.setText("into the Name and Description boxes");
+            } else if (description.contains("!)@(#*$&%^")){
+                output1.setText("Due to how data is stored,");
+                output2.setText("Your description can't contain !)@(#*$&%^");
+            }else { //Otherwise, create Fakemon
                 FakemonList.getFakemonListInstance().addFakemon(new Fakemon(name, primaryType, secondaryType, ability, hp, atk, def, spAtk, spDef, spe, description));
                 if(fakemonMoveList.size()>0){ // Add moves (if any)
                     FakemonList.getFakemonListInstance().getFakemon(name).addMoves(fakemonMoveList);
@@ -146,5 +152,8 @@ public class createFakemonController {
             output1.setText("");
             output2.setText("Invalid stats. Please enter only numbers.");
         }
+
+        //Save changes
+        Controller.saveFakemon();
     }
 }

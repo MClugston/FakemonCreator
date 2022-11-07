@@ -41,6 +41,11 @@ public class MoveSet implements Iterable<Move>{
         return false;
     }
 
+    //Remove move by Move
+    public boolean removeMove(Move move){
+        return thisSet.remove(move);
+    }
+
     //Access individual items of the set through the title
     public Move getMove(String name){
         for(Move m : thisSet){

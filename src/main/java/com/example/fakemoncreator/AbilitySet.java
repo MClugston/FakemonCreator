@@ -41,6 +41,11 @@ public class AbilitySet implements Iterable<Ability>{
         return false;
     }
 
+    //Remove by Ability
+    public boolean removeAbility(Ability ability){
+        return thisSet.remove(ability);
+    }
+
     //Access  items via name
     public Ability getAbility(String name){
         for(Ability a : thisSet){

@@ -27,5 +27,8 @@ public class createAbilityController {
             Stage stage = (Stage) output.getScene().getWindow();
             stage.close();
         }
+
+        //Save changes
+        Controller.saveAbilities();
     }
 }

@@ -84,7 +84,9 @@ public class createMoveController {
 
             if(MoveSet.getMoveSet().alreadyInSet(name)){
                 output.setText("A move with that name already exists.");
-            } else {
+            } else if((name.trim().equals("")) || description.trim().equals("")){
+                output.setText("Please input something into the Name and Description boxes");
+            }else {
                 MoveSet.getMoveSet().addMove(new Move(name, type, category, power, accuracy, pp, description));
                 //Close the popup
                 Stage stage = (Stage) output.getScene().getWindow();
@@ -93,5 +95,8 @@ public class createMoveController {
         } catch (NumberFormatException e){ //If non-numbers in number fields
             output.setText("Please enter numbers for Power, Accuracy, and PP.");
         }
+
+        //Save changes
+        Controller.saveMoves();
     }
 }

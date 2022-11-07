@@ -6,12 +6,7 @@ public class OfficialAbility extends Ability{
     }
 
     @Override
-    public String setEffect(String effect) {
-        return "You can't change the effect of an official ability.";
-    }
-
-    @Override
-    public String setName(String name) {
-        return "You can't change the name of an official ability.";
+    public String toString() {
+        return super.toString() + " Official ability.";
     }
 }

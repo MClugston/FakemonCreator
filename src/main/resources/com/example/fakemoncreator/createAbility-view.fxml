@@ -12,7 +12,7 @@
     </padding>
 
     <TextField fx:id="nameText" layoutX="40" layoutY="20" text="Input Name" prefWidth="360"/>
-    <TextArea fx:id="descriptionText" layoutX="40" layoutY="60" prefWidth="360" prefHeight="240" text="Enter Description"/>
+    <TextArea fx:id="descriptionText" layoutX="40" layoutY="60" prefWidth="360" prefHeight="240" text="Enter Description" wrapText="true"/>
 
     <Label fx:id="output" layoutX="90" layoutY="440" text="Once both fields are filled, press Create Ability"/>
     <Button onAction="#createAbility" layoutX="165" layoutY="480" text="Create Ability"/>

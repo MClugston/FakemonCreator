@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.fakemoncreator.editFakemonController"
+      style="-fx-background-color:#ffffff;">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Label layoutX="120" layoutY="20" text="Select the fakemon you would like to edit,"/>
+    <Label layoutX="110" layoutY="35" text="then edit any fields you would like to edit,"/>
+    <Label layoutX="125" layoutY="50" text="then press the Confirm Edits button."/>
+
+    <ComboBox fx:id="fakemonBox" layoutX="90" layoutY="75" prefWidth="260" onAction="#fillFields"/>
+
+    <TextField fx:id="fakemonName" layoutX="40" layoutY="120" text="Input Name"/>
+    <ComboBox fx:id="abilityComboBox" layoutX="240" layoutY="120" prefWidth="150"/>
+
+
+    <ComboBox fx:id="primaryTypeBox" layoutX="40" layoutY="160" prefWidth = "150"/>
+    <ComboBox fx:id="secondaryTypeBox" layoutX="240" layoutY="160" prefWidth="150"/>
+
+    <TextField fx:id="hpText" layoutX="40" layoutY="200" text="Input HP"/>
+    <TextField fx:id="speText" layoutX="240" layoutY="200" text="Input Speed"/>
+    <TextField fx:id="atkText" layoutX="40" layoutY="240" text="Input Attack"/>
+    <TextField fx:id="spAtkText" layoutX="240" layoutY="240" text="Input Sp. Attack"/>
+    <TextField fx:id="defText" layoutX="40" layoutY="280" text="Input Defense"/>
+    <TextField fx:id="spDefText" layoutX="240" layoutY="280" text="Input Sp. Defense"/>
+
+    <TextArea fx:id="descriptionText" layoutX="40" layoutY="320" prefHeight="120" prefWidth="350" text="Enter a description" wrapText="true"/>
+
+    <Label fx:id="output" layoutX="100" layoutY="455" text="Once all fields are filled, press Confirm Edits"/>
+    <Button onAction="#editFakemon" layoutX="165" layoutY="480" text="Confirm Edits"/>
+
+</Pane>

@@ -20,7 +20,7 @@
     <TextField fx:id="accuracyText" layoutX="283" layoutY="60" prefWidth="53" text="Accuracy"/>
     <TextField fx:id="ppText" layoutX="346" layoutY="60" prefWidth="53" text="PP"/>
 
-    <TextArea fx:id="descriptionText" layoutX="40" layoutY="100" prefWidth="360" prefHeight="240" text="Enter Description"/>
+    <TextArea fx:id="descriptionText" layoutX="40" layoutY="100" prefWidth="360" prefHeight="240" text="Enter Description" wrapText="true"/>
 
     <Label layoutX="85" layoutY="350" text="For non-damaging moves, input 0 for the power."/>
     <Label layoutX="75" layoutY="370" text="For moves with variable power, input 1 for the power."/>

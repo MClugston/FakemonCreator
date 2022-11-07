@@ -23,79 +23,34 @@ public class Move implements Comparable<Move>{
         return name;
     }
 
-    public String setName(String name) {
-        if(MoveSet.getMoveSet().alreadyInSet(name)){
-            return "A move with this name already exists.";
-        }
-        String oldName = this.name;
-        this.name = name;
-        return "Name was changed to " + name + " (Was " + oldName + ")";
-    }
-
     public String getType() {
         return type;
-    }
-
-    public String setType(String type) {
-        String oldType = this.type;
-        this.type = type;
-        return "Type was changed to " + type + " (Was " + oldType + ")";
     }
 
     public String getCategory() {
         return category;
     }
 
-    public String setCategory(String category) {
-        String oldCategory = this.category;
-        this.category = category;
-        return "Category was changed to " + category + " (Was " + oldCategory + ")";
-    }
-
     public int getPower() {
         return power;
-    }
-
-    public String setPower(int power) {
-        int oldPower = this.power;
-        this.power = power;
-        return "Power was changed to " + power + " (Was " + oldPower + ")";
     }
 
     public int getAccuracy() {
         return accuracy;
     }
 
-    public String setAccuracy(int accuracy) {
-        int oldAccuracy = this.accuracy;
-        this.accuracy = accuracy;
-        return "Accuracy was changed to " + accuracy + " (Was " + oldAccuracy + ")";
-    }
-
-    public int getPp() {
+    public int getPP() {
         return pp;
-    }
-
-    public String setPp(int pp) {
-        int oldPP = this.pp;
-        this.pp = pp;
-        return "PP was changed to " + pp + " (Was " + oldPP + ")";
     }
 
     public String getDescription() {
         return description;
     }
 
-    public String setDescription(String description) {
-        String oldDescription = this.description;
-        this.description = description;
-        return "Description was change to " + description + " (Was " + oldDescription + ")";
-    }
-
     @Override
     public String toString() {
         String output = name + ": " + "a " + type + " type " + category + " move. ";
-        if(category.equalsIgnoreCase("status")){
+        if(power==0){
             output += "Non-damaging, ";
         } else if (power==1) {
             output += "Variable power, ";

@@ -37,28 +37,13 @@ public class Fakemon implements Comparable<Fakemon>{
         this.description = description;
     }
 
-    //Get and set methods
+    //Get methods
     public String getName() {
         return name;
     }
 
-    public String setName(String name) { //Fails if name is taken
-        if (FakemonList.getFakemonListInstance().alreadyInList(name)) {
-            return "A Fakemon with this name already exists.";
-        }
-        String oldName = this.name;
-        this.name = name;
-        return "Name changed to " + name + " (Was " + oldName + ")";
-    }
-
     public String getPrimaryType() {
         return primaryType;
-    }
-
-    public String setPrimaryType(String primaryType) {
-        String oldPrimaryType = this.primaryType;
-        this.primaryType = primaryType;
-        return "Primary type changed to " + primaryType + " (Was " + oldPrimaryType + ")";
     }
 
     public String getSecondaryType() {
@@ -68,20 +53,8 @@ public class Fakemon implements Comparable<Fakemon>{
         return secondaryType;
     }
 
-    public String setSecondaryType(String secondaryType) {
-        String oldSecondaryType = this.getSecondaryType(); // Prevent potential null pointer
-        this.secondaryType = secondaryType;
-        return "Secondary type changed to " + secondaryType + " (Was " + oldSecondaryType + ")";
-    }
-
     public Ability getAbility() {
         return ability;
-    }
-
-    public String setAbility(Ability ability) {
-        Ability oldAbility = this.ability;
-        this.ability = ability;
-        return "Ability changed to " + ability.getName() + " (Was " + oldAbility.getName() + ")";
     }
 
     public List<Move> getMoveList() {
@@ -92,105 +65,58 @@ public class Fakemon implements Comparable<Fakemon>{
         return hp;
     }
 
-    public String setHp(int hp) {
-        int oldHP = this.hp;
-        this.hp = hp;
-        return "HP stat changed to " + hp + " (Was " + oldHP + ")";
-    }
-
     public int getAttack() {
         return attack;
-    }
-
-    public String setAttack(int attack) {
-        int oldAttack = this.attack;
-        this.attack = attack;
-        return "Attack stat changed to " + attack + " (Was " + oldAttack + ")";
     }
 
     public int getDefense() {
         return defense;
     }
 
-    public String setDefense(int defense) {
-        int oldDefense = this.defense;
-        this.defense = defense;
-        return "Defense stat changed to " + defense + " (Was " + oldDefense + ")";
-    }
-
     public int getSpecialAttack() {
         return specialAttack;
-    }
-
-    public String setSpecialAttack(int specialAttack) {
-        int oldSpecialAttack = this.specialAttack;
-        this.specialAttack = specialAttack;
-        return "Special attack stat changed to " + specialAttack + " (Was " + oldSpecialAttack + ")";
     }
 
     public int getSpecialDefense() {
         return specialDefense;
     }
 
-    public String setSpecialDefense(int specialDefense) {
-        int oldSpecialDefense = this.specialDefense;
-        this.specialDefense = specialDefense;
-        return "Special defense stat changed to " + specialDefense + " (Was " + oldSpecialDefense + ")";
-    }
-
     public int getSpeed() {
         return speed;
-    }
-
-    public String setSpeed(int speed) {
-        int oldSpeed = this.speed;
-        this.speed = speed;
-        return "Speed stat changed to " + speed + " (Was " + oldSpeed + ")";
     }
 
     public String getDescription() {
         return description;
     }
 
-    public String setDescription(String description) {
-        String oldDescription = this.description;
-        this.description = description;
-        return "Description changed to " + description + " (Was " + oldDescription + ")";
-    }
-
     // Basic adds and removes for moveList
-    public String addMove(Move move) {
-        moveList.add(move);
-        return "Move " + move.getName() + " successfully added to " + this.getName();
+    public boolean addMove(Move move) {
+        if(!knowsMove(move)) {
+            return moveList.add(move);
+        } return false;
     }
 
-    public String removeMove(Move move) {
-        moveList.remove(move);
-        return "Move " + move.getName() + " successfully removed from " + this.getName();
+    public boolean removeMove(Move move) {
+        return moveList.remove(move);
     }
 
-    public String addMoves(Collection<Move> moves) {
-        moveList.addAll(moves);
-        String output = "";
-        for (Move m : moves) {
-            output += m.getName() + ", ";
+    public boolean addMoves(Collection<Move> moves) {
+        return moveList.addAll(moves);
+    }
+
+    private boolean knowsMove(Move move){
+        for(Move m : moveList){
+            if(m.equals(move)){
+                return true;
+            }
         }
-        return output + "successfully added to " + this.getName();
-    }
-
-    public String removeMoves(Collection<Move> moves) {
-        moveList.removeAll(moves);
-        String output = "";
-        for (Move m : moves) {
-            output += m.getName() + ", ";
-        }
-        return output + "successfully removed from " + this.getName();
+        return false;
     }
 
     @Override
     public String toString() {
         String output = name + ": ";
-        if (secondaryType != null) {
+        if (!(secondaryType.equals("None"))) {
             output += "A " + primaryType + "/" + secondaryType;
         } else {
             output += primaryType;

@@ -3,8 +3,6 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Line?>
 
 <Pane fx:id="background" xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.example.fakemoncreator.Controller"
@@ -20,44 +18,19 @@
     <Button text="Create A Fakemon" onAction="#createFakemon" layoutX="40" layoutY="80"/>
     <Button text="Delete A Fakemon" onAction="#deleteFakemon" layoutX="280" layoutY="80"/>
     <Button text="Edit A Fakemon" onAction="#editFakemon" layoutX="520" layoutY="80"/>
-    <Button text="View Fakemon List" onAction="#viewFakemonList" layoutX="760" layoutY="80"/>
+    <Button text="Edit A Fakemon's Moves" onAction="#editFakemonMoves" layoutX="760" layoutY="80"/>
+    <Button text="View My Fakemon List" onAction="#viewFakemonList" layoutX="1000" layoutY="80"/>
 
 
     <Button text="Create An Ability" onAction="#createAbility" layoutX="40" layoutY="120"/>
     <Button text="Delete An Ability" onAction="#deleteAbility" layoutX="280" layoutY="120"/>
     <Button text="Edit An Ability" onAction="#editAbility" layoutX="520" layoutY="120"/>
-    <Button text="View Ability List" onAction="#viewAbilityList" layoutX="760" layoutY="120"/>
+    <Button text="View Full Ability List" onAction="#viewAbilityList" layoutX="760" layoutY="120"/>
+    <Button text="View My Ability List" onAction="#viewMyAbilities" layoutX="1000" layoutY="120"/>
 
     <Button text="Create A Move" onAction="#createMove" layoutX="40" layoutY="160"/>
     <Button text="Delete A Move" onAction="#deleteMove" layoutX="280" layoutY="160"/>
     <Button text="Edit A Move" onAction="#editMove" layoutX="520" layoutY="160"/>
-    <Button text="View Move List" onAction="#viewMoveList" layoutX="760" layoutY="160"/>
-
-    <Button text="aa" onAction="#promptReset" layoutX="1000" layoutY="80"/>
-
-
-
-
-
-
-
-
-    <Line layoutX="40" layoutY="152" endX="1200" fx:id="separator"/>
-
-
-
-
-    <VBox layoutX="1000" layoutY="160">
-        <RadioButton fx:id="lightMode" text="Light Mode" selected="true" onAction="#lightModeButton">
-            <toggleGroup>
-                <ToggleGroup fx:id="colorGroup"/>
-            </toggleGroup>
-        </RadioButton>
-        <RadioButton fx:id="darkMode" text="Dark Mode" onAction="#darkModeButton">
-            <toggleGroup>
-                <fx:reference source="colorGroup"/>
-            </toggleGroup>
-        </RadioButton>
-    </VBox>
-
+    <Button text="View Full Move List" onAction="#viewMoveList" layoutX="760" layoutY="160"/>
+    <Button text="View My Move List" onAction="#viewMyMoves" layoutX="1000" layoutY="160"/>
 </Pane>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.fakemoncreator.editMoveController"
+      style="-fx-background-color:#ffffff;">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Label layoutX="120" layoutY="20" text="Select the move you would like to edit,"/>
+    <Label layoutX="110" layoutY="35" text="then edit any fields you would like to edit,"/>
+    <Label layoutX="125" layoutY="50" text="then press the Confirm Edits button."/>
+
+    <ComboBox fx:id="moveBox" layoutX="90" layoutY="80" prefWidth="260" onAction="#fillFields"/>
+
+    <TextField fx:id="nameText" layoutX="40" layoutY="120" text="Input Name" prefWidth="360"/>
+
+    <ComboBox fx:id="typeText" layoutX="40" layoutY="160" prefWidth="80"/>
+    <ComboBox fx:id="categoryText" layoutX="130" layoutY="160" prefWidth="80"/>
+
+    <TextField fx:id="powerText" layoutX="220" layoutY="160" prefWidth="53" text="Power"/>
+    <TextField fx:id="accuracyText" layoutX="283" layoutY="160" prefWidth="53" text="Accuracy"/>
+    <TextField fx:id="ppText" layoutX="346" layoutY="160" prefWidth="53" text="PP"/>
+
+    <TextArea fx:id="descriptionText" layoutX="40" layoutY="200" prefWidth="360" prefHeight="180" text="Enter Description" wrapText="true"/>
+
+    <Label layoutX="85" layoutY="390" text="For non-damaging moves, input 0 for the power."/>
+    <Label layoutX="75" layoutY="405" text="For moves with variable power, input 1 for the power."/>
+    <Label layoutX="83" layoutY="420" text="For moves that can't miss, input 0 for the accuracy."/>
+
+    <Label fx:id="output" layoutX="100" layoutY="455" text="Once all fields are filled, press Confirm Edits"/>
+    <Button onAction="#editMove" layoutX="165" layoutY="480" text="Confirm Edits"/>
+
+</Pane>

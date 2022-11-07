@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.fakemoncreator.editAbilityController"
+      style="-fx-background-color:#ffffff;">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Label layoutX="115" layoutY="20" text="Select the ability you would like to edit,"/>
+    <Label layoutX="110" layoutY="35" text="then edit any fields you would like to edit,"/>
+    <Label layoutX="125" layoutY="50" text="then press the Confirm Edits button."/>
+
+    <ComboBox fx:id="abilityBox" layoutX="90" layoutY="80" prefWidth="260" onAction="#fillFields"/>
+
+    <TextField fx:id="nameText" layoutX="40" layoutY="120" prefWidth="360"/>
+    <TextArea fx:id="descriptionText" layoutX="40" layoutY="160" prefWidth="360" prefHeight="240" wrapText="true"/>
+
+    <Label fx:id="output" layoutX="95" layoutY="450" text="Once both fields are filled, press Confirm Edits"/>
+    <Button onAction="#editAbility" layoutX="165" layoutY="480" text="Confirm Edits"/>
+
+</Pane>

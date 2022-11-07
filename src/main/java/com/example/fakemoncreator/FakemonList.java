@@ -36,7 +36,7 @@ public class FakemonList implements Iterable<Fakemon>{
         return false;
     }
 
-    //Remove item by name
+    //Remove by name
     public boolean removeFakemon(String name){
         if(alreadyInList(name)){
             for(Fakemon f : monList){
@@ -47,6 +47,11 @@ public class FakemonList implements Iterable<Fakemon>{
             }
         }
         return false;
+    }
+
+    //Remove by Fakemon
+    public boolean removeFakemon(Fakemon f){
+        return monList.remove(f);
     }
 
     //Access individual items of the list via name

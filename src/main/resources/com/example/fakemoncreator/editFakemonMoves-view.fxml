@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<Pane xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.fakemoncreator.editFakemonMovesController"
+      style="-fx-background-color:#ffffff;">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Label layoutX="110" layoutY="20" text="Select the fakemon you would like to edit,"/>
+    <Label layoutX="85" layoutY="35" text="then use the Add Move and Remove Move buttons"/>
+    <Label layoutX="140" layoutY="50" text="to edit that fakemon's moves."/>
+
+    <ComboBox fx:id="fakemonBox" layoutX="90" layoutY="75" prefWidth="260" onAction="#fillFields"/>
+
+    <Label layoutX="80" layoutY="120" text="Add Moves"/>
+    <ComboBox fx:id="allMovesBox" layoutX="30" layoutY="142" prefWidth="160"/>
+    <Button onAction="#addMove" layoutX="75" layoutY="175" text="Add Move"/>
+
+    <Label layoutX="285" layoutY="120" text="Remove Moves"/>
+    <ComboBox fx:id="fakemonMovesBox" layoutX="250" layoutY="142" prefWidth="160"/>
+    <Button onAction="#removeMove" layoutX="280" layoutY="175" text="Remove Move"/>
+
+    <Line layoutX="20" layoutY="110" endX="400"/>
+    <Line layoutX="220" layoutY="110" endY="100"/>
+    <Line layoutX="20" layoutY="210" endX="400"/>
+
+    <TextArea fx:id="output" layoutX="40" layoutY="230" prefWidth="360" prefHeight="170" wrapText="true" editable="false"/>
+
+    <Label layoutX="135" layoutY="455" text="Once you are finished, press Close"/>
+    <Button onAction="#close" layoutX="200" layoutY="480" text="Close"/>
+
+</Pane>
