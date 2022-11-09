@@ -121,7 +121,12 @@ public class Fakemon implements Comparable<Fakemon>{
         } else {
             output += primaryType;
         }
-        output += " type with the ability " + ability.getName() + ". ";
+        output += " type ";
+         if(ability!=null){
+             output += " with the ability " + ability.getName() + ". ";
+         } else{
+             output += " with a deleted ability.";
+         }
         output += hp + " HP; " + attack + " Atk; " + defense + " Def; "
                 + specialAttack + " SpAtk; " + specialDefense + " SpDef; "
                 + speed + " Spd; Base stat total of " + statTotal + ". ";

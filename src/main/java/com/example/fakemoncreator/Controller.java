@@ -290,6 +290,9 @@ public class Controller {
                 for(Move m: f.getMoveList()){
                     writer.write("," + m.getName());
                 }
+                if(f.getMoveList().size()==0){
+                    writer.write(",");
+                }
                 writer.write("\n");
             }
 

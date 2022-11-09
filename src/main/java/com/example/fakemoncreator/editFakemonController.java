@@ -156,6 +156,8 @@ public class editFakemonController {
                     output.setText("Please input something into the Name and Description boxes");
                 } else if (description.contains("!)@(#*$&%^")){
                     output.setText("Your description can't contain !)@(#*$&%^");
+                } else if(abilityComboBox.getValue()==null){
+                    output.setText("Please select an ability.");
                 } else { //Otherwise, create Fakemon
                     // Get the move list from old fakemon
                     ArrayList<Move> moveList = new ArrayList<>();
@@ -168,6 +170,9 @@ public class editFakemonController {
                     if(moveList.size()>0){
                         FakemonList.getFakemonListInstance().getFakemon(name).addMoves(moveList);
                     }
+                    //Save changes
+                    Controller.saveFakemon();
+
                     //Close the popup
                     Stage stage = (Stage) output.getScene().getWindow();
                     stage.close();
@@ -177,8 +182,5 @@ public class editFakemonController {
                 output.setText("Invalid stats. Please enter only numbers.");
             }
         }
-
-        //Save changes
-        Controller.saveFakemon();
     }
 }

@@ -2,11 +2,14 @@ package com.example.fakemoncreator;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 public class deleteAbilityController {
     @FXML
     private ComboBox<Ability> abilityBox;
+    @FXML
+    private Label output;
 
     public void initialize(){
         // Auto-fill ComboBox with user-created Abilities
@@ -21,17 +24,25 @@ public class deleteAbilityController {
     @FXML
     protected void deleteAbility(){
         Ability selected = abilityBox.getValue();
+        boolean inUse = false;
 
-        // Will be null if ComboBox is empty
-        if(selected!=null) {
-            AbilitySet.getAbilitySet().removeAbility(selected);
+        for(Fakemon f: FakemonList.getFakemonListInstance()){ //Check if any fakemon uses this ability
+            if(f.getAbility().equals(selected)){
+                inUse=true;
+            }
         }
 
-        //Close popup
-        Stage stage = (Stage) abilityBox.getScene().getWindow();
-        stage.close();
+        if(inUse){ //Don't delete if something uses it
+            output.setText("You can't delete an ability that is currently in use.");
+        } else if(selected!=null) { // Will be null if ComboBox is empty
+            AbilitySet.getAbilitySet().removeAbility(selected);
 
-        //Save changes
-        Controller.saveAbilities();
+            //Close popup
+            Stage stage = (Stage) abilityBox.getScene().getWindow();
+            stage.close();
+
+            //Save changes
+            Controller.saveAbilities();
+        }
     }
 }

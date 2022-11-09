@@ -13,7 +13,7 @@
 
     <Label layoutX="95" layoutY="40" text="Select the move you would like to delete, then"/>
     <Label layoutX="140" layoutY="55" text="click the Delete Move button."/>
-    <Label layoutX="90" layoutY="80" text="Note: You can only delete moves that you created"/>
+    <Label fx:id="output" layoutX="90" layoutY="80" text="Note: You can only delete moves that you created"/>
 
     <ComboBox fx:id="moveBox" layoutX="90" layoutY="110" prefWidth="260"/>
 

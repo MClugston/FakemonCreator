@@ -2,11 +2,14 @@ package com.example.fakemoncreator;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 public class deleteMoveController {
     @FXML
     private ComboBox<Move> moveBox;
+    @FXML
+    private Label output;
 
     // Auto-fill ComboBox with user-created Moves
     public void initialize(){
@@ -22,17 +25,25 @@ public class deleteMoveController {
     @FXML
     protected void deleteMove(){
         Move selected = moveBox.getValue();
+        boolean inUse = false;
 
-        // Will be null if ComboBox is empty
-        if(selected!=null) {
-            MoveSet.getMoveSet().removeMove(selected);
+        for(Fakemon f: FakemonList.getFakemonListInstance()){ // Check if the move is in use
+            if(f.getMoveList().contains(selected)){
+                inUse = true;
+            }
         }
 
-        // Close popup
-        Stage stage = (Stage) moveBox.getScene().getWindow();
-        stage.close();
+        if(inUse){
+            output.setText("You can't delete a move that is currently in use.");
+        } else if(selected!=null) { // Will be null if ComboBox is empty
+            MoveSet.getMoveSet().removeMove(selected);
 
-        //Save changes
-        Controller.saveMoves();
+            // Close popup
+            Stage stage = (Stage) moveBox.getScene().getWindow();
+            stage.close();
+
+            //Save changes
+            Controller.saveMoves();
+        }
     }
 }

@@ -34,6 +34,8 @@ public class editMoveController {
     @FXML
     private TextField ppText;
 
+    private boolean inUse = false;
+
     public void initialize(){
         List<String> types = new ArrayList<>();
         types.add("Bug");
@@ -96,6 +98,13 @@ public class editMoveController {
             ppText.setText(move.getPP() + "");
 
             descriptionText.setText(move.getDescription());
+
+            for(Fakemon f: FakemonList.getFakemonListInstance()){ // If a move is in use,
+                if(f.getMoveList().contains(moveBox.getValue())){
+                    inUse = true;
+                    output.setText("You can't edit a move that is currently in use."); // inform the user that they can't edit it
+                }
+            }
         }
     }
 
@@ -130,6 +139,8 @@ public class editMoveController {
                     output.setText("A move with that name already exists.");
                 } else if ((name.trim().equals("")) || description.trim().equals("")) { // Check if fields are blank
                     output.setText("Please input something into the Name and Description boxes");
+                } else if(inUse) {
+                    output.setText("You can't edit a move that is currently in use.");
                 } else { // Otherwise, delete old move & create new move
                     moveSet.removeMove(oldName);
                     moveSet.addMove(new Move(name, type, category, power, accuracy, pp, description));

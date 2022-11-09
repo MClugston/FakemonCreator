@@ -18,6 +18,8 @@ public class editAbilityController {
     @FXML
     private Label output;
 
+    private boolean inUse = false;
+
     public void initialize(){
         // Fill AbilityBox with user-created abilities (non-OfficialAbility)
         for(Ability a: AbilitySet.getAbilitySet()){
@@ -43,6 +45,13 @@ public class editAbilityController {
         if(abilityBox.getValue()!=null){
             nameText.setText(abilityBox.getValue().getName());
             descriptionText.setText(abilityBox.getValue().getEffect());
+
+            for(Fakemon f: FakemonList.getFakemonListInstance()){ // If an ability is in use,
+                if(f.getAbility().equals(abilityBox.getValue())){
+                    inUse = true;
+                    output.setText("You can't edit an ability that is currently in use."); // inform the user that they can't edit it
+                }
+            }
         }
     }
 
@@ -59,16 +68,19 @@ public class editAbilityController {
                 output.setText("That name is already used by a different ability.");
             } else if ((newName.trim().equals("")) || descriptionText.getText().trim().equals("")) { //If either are blank when trimmed
                 output.setText("Please input something into both fields");
+            } else if(inUse){
+                output.setText("You can't edit an ability that is currently in use.");
             } else {
                 // Due to the nature of a Treeset, it will not sort after using set methods, so create a new object to keep it sorted
                 abilitySet.removeAbility(oldName);
                 abilitySet.addAbility(new Ability(newName, descriptionText.getText()));
+
+                //Save changes
+                Controller.saveAbilities();
+
                 Stage stage = (Stage) nameText.getScene().getWindow();
                 stage.close();
             }
         }
-
-        //Save changes
-        Controller.saveAbilities();
     }
 }
