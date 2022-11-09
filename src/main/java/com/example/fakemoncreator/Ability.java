@@ -24,7 +24,7 @@ public class Ability implements Comparable<Ability> {
     }
 
     @Override
-    public int compareTo(Ability o) {
-        return this.name.compareToIgnoreCase(o.getName());
+    public int compareTo(Ability a) {
+        return this.name.compareToIgnoreCase(a.getName());
     }
 }

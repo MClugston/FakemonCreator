@@ -5,11 +5,11 @@ import java.util.*;
 public class AbilitySet implements Iterable<Ability>{
     // Instance for singleton
     private static AbilitySet instance = null;
-    private static TreeSet<Ability> thisSet;
+    private static TreeSet<Ability> abilityTreeSet;
 
     // Private to ensure only 1 is created
     private AbilitySet(){
-        thisSet = new TreeSet<>();
+        abilityTreeSet = new TreeSet<>();
     }
 
     // Return the AbilitySet
@@ -22,19 +22,19 @@ public class AbilitySet implements Iterable<Ability>{
 
     //Return the internal TreeSet
     public static TreeSet<Ability> getRawAbilitySet(){
-        return thisSet;
+        return abilityTreeSet;
     }
 
     //Add ability
     public boolean addAbility(Ability ability){
-        return thisSet.add(ability);
+        return abilityTreeSet.add(ability);
     }
 
     //Remove ability by name
     public boolean removeAbility(String name){
-        for(Ability a : thisSet){
+        for(Ability a : abilityTreeSet){
             if(a.getName().equalsIgnoreCase(name)){
-                thisSet.remove(a);
+                abilityTreeSet.remove(a);
                 return true;
             }
         }
@@ -43,12 +43,12 @@ public class AbilitySet implements Iterable<Ability>{
 
     //Remove by Ability
     public boolean removeAbility(Ability ability){
-        return thisSet.remove(ability);
+        return abilityTreeSet.remove(ability);
     }
 
     //Access  items via name
     public Ability getAbility(String name){
-        for(Ability a : thisSet){
+        for(Ability a : abilityTreeSet){
             if(a.getName().equalsIgnoreCase(name)){
                 return a;
             }
@@ -59,7 +59,7 @@ public class AbilitySet implements Iterable<Ability>{
 
     //Check if another item has the same name; only used internally
     public boolean alreadyInSet(String name){
-        for(Ability a : thisSet){
+        for(Ability a : abilityTreeSet){
             if(a.getName().equalsIgnoreCase(name)){
                 return true;
             }
@@ -69,13 +69,13 @@ public class AbilitySet implements Iterable<Ability>{
 
     @Override
     public Iterator<Ability> iterator() {
-        return thisSet.iterator();
+        return abilityTreeSet.iterator();
     }
 
     @Override
     public String toString() {
         String output = "";
-        for (Ability a: thisSet){
+        for (Ability a: abilityTreeSet){
             output += a.toString() + "\n";
         }
         return output;

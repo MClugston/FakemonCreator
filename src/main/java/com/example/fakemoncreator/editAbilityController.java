@@ -10,13 +10,13 @@ import javafx.stage.Stage;
 public class editAbilityController {
 
     @FXML
-    protected TextField nameText;
+    private TextField nameText;
     @FXML
-    protected TextArea descriptionText;
+    private TextArea descriptionText;
     @FXML
-    protected ComboBox<Ability> abilityBox;
+    private ComboBox<Ability> abilityBox;
     @FXML
-    protected Label output;
+    private Label output;
 
     public void initialize(){
         // Fill AbilityBox with user-created abilities (non-OfficialAbility)

@@ -67,7 +67,7 @@ public class Move implements Comparable<Move>{
     }
 
     @Override
-    public int compareTo(Move o) {
-        return this.name.compareToIgnoreCase(o.getName());
+    public int compareTo(Move m) {
+        return this.name.compareToIgnoreCase(m.getName());
     }
 }

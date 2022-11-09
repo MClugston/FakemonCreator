@@ -5,11 +5,11 @@ import java.util.*;
 public class MoveSet implements Iterable<Move>{
     // Instance for singleton
     private static MoveSet instance = null;
-    private static TreeSet<Move> thisSet;
+    private static TreeSet<Move> moveTreeSet;
 
     // Private to ensure only 1 is created
     private MoveSet(){
-        thisSet = new TreeSet<>();
+        moveTreeSet = new TreeSet<>();
     }
 
     // Return the MoveSet
@@ -22,19 +22,19 @@ public class MoveSet implements Iterable<Move>{
 
     //Return the internal TreeSet
     public static TreeSet<Move> getRawMoveSet(){
-        return thisSet;
+        return moveTreeSet;
     }
 
     //Add move
     public boolean addMove(Move move){
-        return thisSet.add(move);
+        return moveTreeSet.add(move);
     }
 
     //Remove move by name
     public boolean removeMove(String name){
-        for(Move m : thisSet){
+        for(Move m : moveTreeSet){
             if(m.getName().equalsIgnoreCase(name)){
-                thisSet.remove(m);
+                moveTreeSet.remove(m);
                 return true;
             }
         }
@@ -43,12 +43,12 @@ public class MoveSet implements Iterable<Move>{
 
     //Remove move by Move
     public boolean removeMove(Move move){
-        return thisSet.remove(move);
+        return moveTreeSet.remove(move);
     }
 
     //Access individual items of the set through the title
     public Move getMove(String name){
-        for(Move m : thisSet){
+        for(Move m : moveTreeSet){
             if(m.getName().equalsIgnoreCase(name)){
                 return m;
             }
@@ -59,7 +59,7 @@ public class MoveSet implements Iterable<Move>{
 
     //Check if another item has the same name; only used internally
     public boolean alreadyInSet(String name){
-        for(Move m : thisSet){
+        for(Move m : moveTreeSet){
             if(m.getName().equalsIgnoreCase(name)){
                 return true;
             }
@@ -69,13 +69,13 @@ public class MoveSet implements Iterable<Move>{
 
     @Override
     public Iterator<Move> iterator() {
-        return thisSet.iterator();
+        return moveTreeSet.iterator();
     }
 
     @Override
     public String toString() {
         String output = "";
-        for (Move m: thisSet){
+        for (Move m: moveTreeSet){
             output += m.toString() + "\n";
         }
         return output;

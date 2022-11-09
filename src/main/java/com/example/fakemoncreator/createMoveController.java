@@ -13,23 +13,23 @@ import java.util.List;
 public class createMoveController {
 
     @FXML
-    protected TextField nameText;
+    private TextField nameText;
     @FXML
-    protected TextArea descriptionText;
+    private TextArea descriptionText;
     @FXML
-    protected Label output;
+    private Label output;
 
     @FXML
-    protected ComboBox<String> typeText;
+    private ComboBox<String> typeText;
     @FXML
-    protected ComboBox<String> categoryText;
+    private ComboBox<String> categoryText;
 
     @FXML
-    protected TextField powerText;
+    private TextField powerText;
     @FXML
-    protected TextField accuracyText;
+    private TextField accuracyText;
     @FXML
-    protected TextField ppText;
+    private TextField ppText;
 
     public void initialize(){
         List<String> types = new ArrayList<>();

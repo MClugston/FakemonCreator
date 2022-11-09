@@ -9,11 +9,11 @@ import javafx.stage.Stage;
 public class createAbilityController {
 
     @FXML
-    protected TextField nameText;
+    private TextField nameText;
     @FXML
-    protected TextArea descriptionText;
+    private TextArea descriptionText;
     @FXML
-    protected Label output;
+    private Label output;
 
     @FXML
     protected void createAbility(){
