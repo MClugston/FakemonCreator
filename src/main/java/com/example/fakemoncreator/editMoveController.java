@@ -88,6 +88,8 @@ public class editMoveController {
     @FXML
     protected void fillFields(){
         if(moveBox.getValue()!=null){
+            inUse = false;
+
             Move move = moveBox.getValue();
             nameText.setText(move.getName());
 

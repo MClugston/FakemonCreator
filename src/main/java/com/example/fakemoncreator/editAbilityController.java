@@ -43,6 +43,8 @@ public class editAbilityController {
     @FXML
     protected void fillFields(){
         if(abilityBox.getValue()!=null){
+            inUse = false;
+
             nameText.setText(abilityBox.getValue().getName());
             descriptionText.setText(abilityBox.getValue().getEffect());
 
