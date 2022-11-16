@@ -160,7 +160,7 @@ public class editFakemonController {
                     output.setText("Please select an ability.");
                 } else { //Otherwise, create Fakemon
                     // Get the move list from old fakemon
-                    ArrayList<Move> moveList = new ArrayList<>();
+                    MyLinkedList<Move> moveList = new MyLinkedList<>();
                     if(fakemonList.getFakemon(oldName).getMoveList().size()>0){
                         moveList.addAll(fakemonList.getFakemon(oldName).getMoveList());
                     }

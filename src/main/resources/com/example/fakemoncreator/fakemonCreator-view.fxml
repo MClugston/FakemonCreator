@@ -21,7 +21,6 @@
     <Button text="Edit A Fakemon's Moves" onAction="#editFakemonMoves" layoutX="760" layoutY="80"/>
     <Button text="View My Fakemon List" onAction="#viewFakemonList" layoutX="1000" layoutY="80"/>
 
-
     <Button text="Create An Ability" onAction="#createAbility" layoutX="40" layoutY="120"/>
     <Button text="Delete An Ability" onAction="#deleteAbility" layoutX="280" layoutY="120"/>
     <Button text="Edit An Ability" onAction="#editAbility" layoutX="520" layoutY="120"/>
@@ -33,4 +32,7 @@
     <Button text="Edit A Move" onAction="#editMove" layoutX="520" layoutY="160"/>
     <Button text="View Full Move List" onAction="#viewMoveList" layoutX="760" layoutY="160"/>
     <Button text="View My Move List" onAction="#viewMyMoves" layoutX="1000" layoutY="160"/>
+
+    <Button text="Ability Quiz" onAction="#abilityQuiz" layoutX="1000" layoutY="40"/>
+
 </Pane>

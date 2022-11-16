@@ -1,8 +1,6 @@
 package com.example.fakemoncreator;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class FakemonList implements Iterable<Fakemon>{
     //Instance for singleton

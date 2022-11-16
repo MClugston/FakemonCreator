@@ -78,9 +78,8 @@ public class editMoveController {
         if(moveBox.getItems().size()>0) {
             fillFields();
         } else{
-            nameText.setText("You have not created any moves.");
-            descriptionText.setText("No operations in this tab will function. Please redirect " +
-                    "yourself to the Create A Move button on the main menu.");
+            descriptionText.setText("You have not created any moves. No operations in this tab will function. " +
+                    "Please redirect yourself to the Create A Move button on the main menu.");
         }
     }
 

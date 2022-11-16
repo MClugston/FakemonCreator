@@ -204,6 +204,20 @@ public class Controller {
         }
     }
 
+    @FXML
+    protected void abilityQuiz(){
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("abilityQuiz-view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 440, 520);
+            Stage stage = new Stage();
+            stage.setTitle("Ability Quiz");
+            stage.setScene(scene);
+            stage.show();
+        } catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+
     // Methods to save everything to its respective file
     public static void saveAll(){
         saveAbilities();

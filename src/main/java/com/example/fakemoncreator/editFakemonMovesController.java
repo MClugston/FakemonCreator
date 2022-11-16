@@ -30,11 +30,6 @@ public class editFakemonMovesController {
 
         // Remove Moves ComboBox
         fillFields();
-
-        // Check if the user has created any fakemon
-        if(fakemonBox.getItems().size()>0){
-            fillFields();
-        }
     }
 
     @FXML

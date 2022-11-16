@@ -33,9 +33,8 @@ public class editAbilityController {
         if(abilityBox.getItems().size()>0) {
             fillFields();
         } else{
-            nameText.setText("You have not created any abilities.");
-            descriptionText.setText("No operations in this tab will function. Please redirect " +
-                    "yourself to the Create An Ability button on the main menu.");
+            descriptionText.setText("You have not created any abilities. No operations in this tab will function. " +
+                            "Please redirect yourself to the Create An Ability button on the main menu.");
         }
     }
 

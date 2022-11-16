@@ -1,15 +1,13 @@
 package com.example.fakemoncreator;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 public class Fakemon implements Comparable<Fakemon>{
     private String name;
     private String primaryType;
     private String secondaryType;
     private Ability ability;
-    private final List<Move> moveList;
+    private final MyLinkedList<Move> moveList;
     private int hp;
     private int attack;
     private int defense;
@@ -26,7 +24,7 @@ public class Fakemon implements Comparable<Fakemon>{
         this.primaryType = primaryType;
         this.secondaryType = secondaryType;
         this.ability = ability;
-        this.moveList = new ArrayList<>();
+        this.moveList = new MyLinkedList<>();
         this.hp = hp;
         this.attack = attack;
         this.defense = defense;
@@ -57,7 +55,7 @@ public class Fakemon implements Comparable<Fakemon>{
         return ability;
     }
 
-    public List<Move> getMoveList() {
+    public MyLinkedList<Move> getMoveList() {
         return moveList;
     }
 
@@ -90,10 +88,10 @@ public class Fakemon implements Comparable<Fakemon>{
     }
 
     // Basic adds and removes for moveList
-    public boolean addMove(Move move) {
+    public void addMove(Move move) {
         if(!knowsMove(move)) {
-            return moveList.add(move);
-        } return false;
+            moveList.add(move);
+        }
     }
 
     public boolean removeMove(Move move) {
@@ -104,13 +102,9 @@ public class Fakemon implements Comparable<Fakemon>{
         return moveList.addAll(moves);
     }
 
+    // Call contains
     private boolean knowsMove(Move move){
-        for(Move m : moveList){
-            if(m.equals(move)){
-                return true;
-            }
-        }
-        return false;
+        return moveList.contains(move);
     }
 
     @Override

@@ -17,8 +17,8 @@
 
     <ComboBox fx:id="abilityBox" layoutX="90" layoutY="80" prefWidth="260" onAction="#fillFields"/>
 
-    <TextField fx:id="nameText" layoutX="40" layoutY="120" prefWidth="360"/>
-    <TextArea fx:id="descriptionText" layoutX="40" layoutY="160" prefWidth="360" prefHeight="240" wrapText="true"/>
+    <TextField fx:id="nameText" layoutX="40" layoutY="120" prefWidth="360" text="Input Name"/>
+    <TextArea fx:id="descriptionText" layoutX="40" layoutY="160" prefWidth="360" prefHeight="240" wrapText="true" text="Enter a description."/>
 
     <Label fx:id="output" layoutX="95" layoutY="450" text="Once both fields are filled, press Confirm Edits"/>
     <Button onAction="#editAbility" layoutX="165" layoutY="480" text="Confirm Edits"/>
