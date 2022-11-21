@@ -5,11 +5,11 @@ import java.util.*;
 public class AbilitySet implements Iterable<Ability>{
     // Instance for singleton
     private static AbilitySet instance = null;
-    private static TreeSet<Ability> abilityTreeSet;
+    private static BST<Ability> abilityTreeSet;
 
     // Private to ensure only 1 is created
     private AbilitySet(){
-        abilityTreeSet = new TreeSet<>();
+        abilityTreeSet = new BST<>();
     }
 
     // Return the AbilitySet
@@ -21,7 +21,7 @@ public class AbilitySet implements Iterable<Ability>{
     }
 
     //Return the internal TreeSet
-    public static TreeSet<Ability> getRawAbilitySet(){
+    public static BST<Ability> getRawAbilitySet(){
         return abilityTreeSet;
     }
 

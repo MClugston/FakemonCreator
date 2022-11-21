@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.fakemoncreator.MoveQuizController"
+      style="-fx-background-color:#ffffff;">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <TextField fx:id="typeText" layoutX="40" layoutY="40" prefWidth="80" editable="false"/>
+    <TextField fx:id="categoryText" layoutX="130" layoutY="40" prefWidth="80" editable="false"/>
+
+    <TextField fx:id="powerText" layoutX="220" layoutY="40" prefWidth="53" text="Power" editable="false"/>
+    <TextField fx:id="accuracyText" layoutX="283" layoutY="40" prefWidth="53" text="Accuracy" editable="false"/>
+    <TextField fx:id="ppText" layoutX="346" layoutY="40" prefWidth="53" text="PP" editable="false"/>
+
+    <TextArea fx:id="descriptionText" layoutX="40" layoutY="100" prefWidth="360" prefHeight="240" wrapText="true" editable="false"/>
+
+    <Label layoutX="80" layoutY="420" text="Enter your guess and press the Guess Move button."/>
+    <TextField fx:id="nameText" layoutX="40" layoutY="445" text="Input guess" prefWidth="360"/>
+    <Button fx:id="button" onAction="#guessMove" layoutX="170" layoutY="480" text="Guess Move"/>
+
+</Pane>

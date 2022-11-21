@@ -11,9 +11,9 @@
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
-    <TextArea fx:id="descriptionText" layoutX="40" layoutY="40" prefWidth="360" prefHeight="300" text="" wrapText="true"/>
+    <TextArea fx:id="descriptionText" layoutX="40" layoutY="40" prefWidth="360" prefHeight="300" wrapText="true" editable="false"/>
 
-    <Label fx:id="output" layoutX="80" layoutY="420" text="Enter your guess and press the Guess Ability button."/>
+    <Label layoutX="80" layoutY="420" text="Enter your guess and press the Guess Ability button."/>
 
     <TextField fx:id="nameText" layoutX="40" layoutY="445" text="Input guess" prefWidth="360"/>
 

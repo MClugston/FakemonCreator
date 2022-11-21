@@ -5,6 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
+import java.util.ArrayList;
 import java.util.Stack;
 
 // Utilizes Stack data structure
@@ -23,7 +24,7 @@ public class AbilityQuizController {
 
     Ability current;
 
-    Ability[] allAbilities = AbilitySet.getRawAbilitySet().toArray(new Ability[0]);
+    ArrayList<Ability> allAbilities = AbilitySet.getRawAbilitySet().inorderArrayList();
 
     // Reset variables and fill Stack
     public void initialize(){
@@ -31,9 +32,10 @@ public class AbilityQuizController {
         button.setText("Guess Ability");
         for(int i=0; i<10; i++){
             int random = (int)(Math.random()*AbilitySet.getRawAbilitySet().size());
-            testAbilities.add(allAbilities[random]);
+            testAbilities.add(allAbilities.get(random));
         }
         nextAbility();
+        nameText.setText("Input guess");
     }
 
     // Pop ability and set text respectively

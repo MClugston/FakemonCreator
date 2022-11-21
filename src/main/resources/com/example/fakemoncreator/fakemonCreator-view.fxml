@@ -33,6 +33,7 @@
     <Button text="View Full Move List" onAction="#viewMoveList" layoutX="760" layoutY="160"/>
     <Button text="View My Move List" onAction="#viewMyMoves" layoutX="1000" layoutY="160"/>
 
+    <Button text="Move Quiz" onAction="#moveQuiz" layoutX="760" layoutY="40"/>
     <Button text="Ability Quiz" onAction="#abilityQuiz" layoutX="1000" layoutY="40"/>
 
 </Pane>

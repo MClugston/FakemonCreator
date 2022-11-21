@@ -205,6 +205,20 @@ public class Controller {
     }
 
     @FXML
+    protected void moveQuiz(){
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("moveQuiz-view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 440, 520);
+            Stage stage = new Stage();
+            stage.setTitle("Move Quiz");
+            stage.setScene(scene);
+            stage.show();
+        } catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
     protected void abilityQuiz(){
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("abilityQuiz-view.fxml"));
