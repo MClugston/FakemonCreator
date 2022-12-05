@@ -1,9 +1,9 @@
 package com.example.fakemoncreator;
 
 public class Entry{
-    int key;
-    Object value;
-    Entry next;
+    protected int key;
+    protected Object value;
+    protected Entry next;
 
     public Entry(int key, Object value){
         this.key = key;

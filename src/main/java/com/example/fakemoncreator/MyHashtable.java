@@ -2,8 +2,8 @@ package com.example.fakemoncreator;
 
 public class MyHashtable<E> {
 
-    Entry[] arrayHash;
-    int size;
+    private Entry[] arrayHash;
+    private int size;
 
     public MyHashtable(int size){
         this.size = size;
@@ -15,7 +15,7 @@ public class MyHashtable<E> {
         }
     }
 
-    int getHash(int key){
+    private int getHash(int key){
         return key%size;
     }
 
