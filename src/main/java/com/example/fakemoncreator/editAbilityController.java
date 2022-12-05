@@ -77,7 +77,7 @@ public class editAbilityController {
                 abilitySet.addAbility(new Ability(newName, descriptionText.getText()));
 
                 //Save changes
-                Controller.saveAbilities();
+                Controller.saveAll();
 
                 Stage stage = (Stage) nameText.getScene().getWindow();
                 stage.close();

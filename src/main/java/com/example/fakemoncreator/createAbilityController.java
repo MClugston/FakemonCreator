@@ -29,6 +29,6 @@ public class createAbilityController {
         }
 
         //Save changes
-        Controller.saveAbilities();
+        Controller.saveAll();
     }
 }

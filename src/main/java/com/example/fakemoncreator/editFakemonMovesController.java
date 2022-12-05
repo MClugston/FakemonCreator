@@ -40,7 +40,7 @@ public class editFakemonMovesController {
         }
 
         //Save changes
-        Controller.saveFakemon();
+        Controller.saveAll();
     }
 
     @FXML
@@ -51,7 +51,7 @@ public class editFakemonMovesController {
         fillFields();
 
         //Save changes
-        Controller.saveFakemon();
+        Controller.saveAll();
     }
 
     // Auto-fill all fields when a fakemon is selected from the ComboBox
@@ -79,7 +79,7 @@ public class editFakemonMovesController {
     // Close the page
     @FXML
     protected void close() {
-        Controller.saveFakemon();
+        Controller.saveAll();
         Stage stage = (Stage) fakemonMovesBox.getScene().getWindow();
         stage.close();
     }

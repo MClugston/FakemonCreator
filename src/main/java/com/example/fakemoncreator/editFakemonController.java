@@ -171,7 +171,7 @@ public class editFakemonController {
                         FakemonList.getFakemonListInstance().getFakemon(name).addMoves(moveList);
                     }
                     //Save changes
-                    Controller.saveFakemon();
+                    SaveFakemon.saveFakemon();
 
                     //Close the popup
                     Stage stage = (Stage) output.getScene().getWindow();

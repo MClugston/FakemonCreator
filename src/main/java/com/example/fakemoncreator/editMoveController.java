@@ -155,6 +155,6 @@ public class editMoveController {
         }
 
         //Save changes
-        Controller.saveMoves();
+        Controller.saveAll();
     }
 }

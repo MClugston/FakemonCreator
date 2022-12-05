@@ -154,6 +154,6 @@ public class createFakemonController {
         }
 
         //Save changes
-        Controller.saveFakemon();
+        Controller.saveAll();
     }
 }

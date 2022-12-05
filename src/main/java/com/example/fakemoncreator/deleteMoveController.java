@@ -43,7 +43,7 @@ public class deleteMoveController {
             stage.close();
 
             //Save changes
-            Controller.saveMoves();
+            Controller.saveAll();
         }
     }
 }

@@ -27,6 +27,6 @@ public class deleteFakemonController {
         stage.close();
 
         //Save changes
-        Controller.saveFakemon();
+        Controller.saveAll();
     }
 }

@@ -97,6 +97,6 @@ public class createMoveController {
         }
 
         //Save changes
-        Controller.saveMoves();
+        Controller.saveAll();
     }
 }

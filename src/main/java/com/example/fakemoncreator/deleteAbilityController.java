@@ -42,7 +42,7 @@ public class deleteAbilityController {
             stage.close();
 
             //Save changes
-            Controller.saveAbilities();
+            Controller.saveAll();
         }
     }
 }
