@@ -84,6 +84,9 @@ public class Controller {
     @FXML
     protected void viewFakemonList() {
         output.setText(FakemonList.getFakemonListInstance().toString());
+        if(output.getText().equals("")){
+            output.setText("You have not created any Fakemon. Press the \"Create A Fakemon\" button to begin.");
+        }
     }
 
     //Abilities
@@ -143,6 +146,9 @@ public class Controller {
                 output.setText(output.getText() + a.toString() + "\n");
             }
         }
+        if(output.getText().equals("")){
+            output.setText("You have not created any abilities. Press the \"Create An Ability\" button to begin.");
+        }
     }
 
     //Moves
@@ -201,6 +207,9 @@ public class Controller {
             if (!(m.getClass().equals(MoveSet.getMoveSet().getMove("Tackle").getClass()))) {
                 output.setText(output.getText() + m.toString() + "\n");
             }
+        }
+        if(output.getText().equals("")){
+            output.setText("You have not created any moves. Press the \"Create A Move\" button to begin.");
         }
     }
 
@@ -281,6 +290,7 @@ class SaveAbilities implements Runnable {
         }
     }
 
+    // Make runnable
     @Override
     public void run() {
         saveAbilities();
@@ -318,6 +328,7 @@ class SaveMoves implements Runnable {
         }
     }
 
+    // Make runnable
     @Override
     public void run() {
         saveMoves();
@@ -355,6 +366,7 @@ class SaveFakemon implements Runnable{
         }
     }
 
+    // Make runnable
     @Override
     public void run() {
         saveFakemon();

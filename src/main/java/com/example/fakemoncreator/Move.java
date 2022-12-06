@@ -49,7 +49,7 @@ public class Move implements Comparable<Move>{
 
     @Override
     public String toString() {
-        String output = name + ": " + "a " + type + " type " + category + " move. ";
+        String output = name + ": " + "a " + type.charAt(0) + type.substring(1).toLowerCase() + " type " + category + " move. ";
         if(power==0){
             output += "Non-damaging, ";
         } else if (power==1) {

@@ -111,16 +111,12 @@ public class Fakemon implements Comparable<Fakemon>{
     public String toString() {
         String output = name + ": ";
         if (!(secondaryType.equals("None"))) {
-            output += "A " + primaryType + "/" + secondaryType;
+            output += "A " + primaryType.toLowerCase() + "/" + secondaryType.toLowerCase();
         } else {
-            output += primaryType;
+            output += primaryType.toLowerCase();
         }
         output += " type ";
-         if(ability!=null){
-             output += " with the ability " + ability.getName() + ". ";
-         } else{
-             output += " with a deleted ability.";
-         }
+        output += " with the ability " + ability.getName() + ". ";
         output += hp + " HP; " + attack + " Atk; " + defense + " Def; "
                 + specialAttack + " SpAtk; " + specialDefense + " SpDef; "
                 + speed + " Spd; Base stat total of " + statTotal + ". ";

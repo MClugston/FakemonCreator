@@ -18,7 +18,7 @@ public class Main extends Application implements Serializable {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fakemonCreator-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
-        stage.setTitle("Media Tracker");
+        stage.setTitle("Fakemon Creator");
         stage.setScene(scene);
         stage.show();
     }
@@ -38,9 +38,9 @@ public class Main extends Application implements Serializable {
             Scanner scanner = new Scanner(abilityFile);
             AbilitySet abilitySet = AbilitySet.getAbilitySet();
 
-            /* The first 260 abilities are official. Split them at the comma to get the name and
+            /* The first 297 abilities are official. Split them at the comma to get the name and
             description, then combine into an OfficialAbility */
-            for(int i=0; i<260; i++){
+            for(int i=0; i<297; i++){
                 String nextLine = scanner.nextLine();
                 int comma = nextLine.indexOf(",");
                 String name = nextLine.substring(0,comma);
@@ -66,8 +66,8 @@ public class Main extends Application implements Serializable {
             Scanner scanner = new Scanner(moveFile);
             MoveSet moveSet = MoveSet.getMoveSet();
 
-            //First 733 moves are official
-            for(int i=0; i<733; i++){
+            //First 813 moves are official
+            for(int i=0; i<813; i++){
 
                 //Get entire next line as a string
                 String nextLine = scanner.nextLine();
