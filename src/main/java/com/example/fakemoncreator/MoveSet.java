@@ -5,11 +5,11 @@ import java.util.*;
 public class MoveSet implements Iterable<Move>{
     // Instance for singleton
     private static MoveSet instance = null;
-    private static TreeSet<Move> moveTreeSet;
+    private static BST<Move> moveTreeSet;
 
     // Private to ensure only 1 is created
     private MoveSet(){
-        moveTreeSet = new TreeSet<>();
+        moveTreeSet = new BST<>();
     }
 
     // Return the MoveSet
@@ -21,7 +21,7 @@ public class MoveSet implements Iterable<Move>{
     }
 
     //Return the internal TreeSet
-    public static TreeSet<Move> getRawMoveSet(){
+    public static BST<Move> getRawMoveSet(){
         return moveTreeSet;
     }
 
